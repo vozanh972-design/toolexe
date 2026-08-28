@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <title>LobeHub Account Manager</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <span class="dot"></span>
+    <h1>Account Manager</h1>
+  </header>
+
+  <main>
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Tài khoản của bạn</h2>
+        <button id="addBtn" class="btn btn-primary">+ Thêm tài khoản</button>
+      </div>
+      <ul id="accountList" class="account-list"></ul>
+      <p id="emptyState" class="empty-state" hidden>
+        Chưa có tài khoản nào. Bấm "Thêm tài khoản" để đăng nhập qua trình duyệt.
+      </p>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Quota — tài khoản đang chọn</h2>
+        <button id="refreshBtn" class="btn btn-ghost">Làm mới</button>
+      </div>
+      <div id="usageBox" class="usage-box">
+        <p class="muted">Chọn một tài khoản để xem quota.</p>
+      </div>
+    </section>
+  </main>
+
+  <div id="addModal" class="modal" hidden>
+    <div class="modal-card">
+      <h3>Thêm tài khoản LobeHub Cloud</h3>
+      <p class="muted small">
+        Nhập địa chỉ server (mặc định là LobeHub Cloud). Trình duyệt hệ thống sẽ mở ra để bạn tự đăng nhập —
+        app này không thấy và không lưu mật khẩu của bạn.
+      </p>
+      <input id="serverUrlInput" type="text" value="https://lobehub.com" />
+      <div id="progressText" class="progress-text"></div>
+      <div class="modal-actions">
+        <button id="cancelAddBtn" class="btn btn-ghost">Hủy</button>
+        <button id="confirmAddBtn" class="btn btn-primary">Mở trình duyệt để đăng nhập</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>
